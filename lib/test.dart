@@ -86,9 +86,9 @@ class BookWidget extends StatelessWidget {
       margin: EdgeInsets.all(3),
       child: GestureDetector(
         onTap: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder:
-                  (BuildContext context) => new BookShower(this)));
+            Navigator.push(context,
+                MaterialPageRoute(builder:
+                    (BuildContext context) => new BookShower(this)));
         },
         child: Stack(
           children: <Widget>[
@@ -136,13 +136,45 @@ class BookShower extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.orange[300],
-        title: Text("Detalle"),
-        centerTitle: true,
+    return GestureDetector(
+        onTap: () {},
+        child:  Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.orange[300],
+            title: Text("Detalle"),
+            centerTitle: true,
+          ),
+          body: Padding(
+            padding: EdgeInsets.all(16),
+            child: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                SizedBox(
+                  height: 240.0,
+                  child: Center(
+                    child: Image.network(bookWidget.book.imgUrl),
+                  ),
+                ),
+                SizedBox(
+                  height: 24.0,
+                ),
+                Text("hkhaj,shfk,hkergkerhgkehkrehkejhgjerhkjerlghelheh jjhjhkhkhfsfdsfsfsfsdfsfdsfdsfsfdsfds kjfdhdkshg wa rywukerguf  djqweduwefrilor ,f eiwyfheil yf h grieg  qwiuuiyqweqrfñg"),
+                SizedBox(
+                  height: 24.0,
+                ),
+                RaisedButton(
+                  disabledColor: Colors.orange,
+                  color: Colors.orange,
+                  child: Text("Leer"),
+                ),
+                SizedBox(
+                  height: 24.0,
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
-      body: bookWidget,
     );
   }
 }
